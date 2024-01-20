@@ -13,7 +13,7 @@ pipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/LiptiDora/register-app-my.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/LiptiDora/register-app-my.git'
                 }
         }
         
@@ -21,5 +21,7 @@ pipeline {
             steps {
                 sh "mvn clean package"
                 
-                }
+             }
         }
+    }
+}
