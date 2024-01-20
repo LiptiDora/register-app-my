@@ -4,7 +4,6 @@ pipeline {
         jdk 'Java17'
         maven 'Maven3'
     }
-    }
     stages{
         stage("Cleanup Workspace"){
                 steps {
@@ -16,4 +15,10 @@ pipeline {
                 steps {
                     git branch: 'main', credentialsId: 'github', url: 'https://github.com/LiptiDora/register-app-my.git'
                 }
+        }
+        
+        stage("Build Application"){
+            steps {
+                sh "mvn clean package"
+            }
         }
